@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_text">16sp</dimen>
+    <dimen name="padding_horizontal">8dp</dimen>
+    <dimen name="padding_vertical">16dp</dimen>
+    <dimen name="marginTop">32dp</dimen>
+    <dimen name="marginEnd">16dp</dimen>
+    <dimen name="padding_16">16dp</dimen>
+    <dimen name="marginStart">16dp</dimen>
+    <dimen name="marginBottom">16dp</dimen>
+    <dimen name="marginTop_textView">16dp</dimen>
+    <dimen name="text_size24">24sp</dimen>
+</resources>

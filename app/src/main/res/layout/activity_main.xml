@@ -1,66 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/color_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:title="Programmer Calculator"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
     <LinearLayout
         android:id="@+id/converter_layout"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginStart"
+        android:layout_marginTop="@dimen/marginTop"
+        android:layout_marginEnd="@dimen/marginEnd"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_layout">
 
         <EditText
             android:id="@+id/number_input_edit_text"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_edit_text"
+            android:hint="@string/enter_number"
             android:inputType="number"
-            android:hint="Enter number" />
+            android:paddingVertical="@dimen/padding_vertical"
+            android:textAlignment="center"
+            android:textColor="@color/color_text_2"
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/result_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:textSize="24sp" />
+            android:layout_marginTop="@dimen/marginTop_textView"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:text="@string/result"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size24" />
 
-        <Button
-            android:id="@+id/binary_button"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Binary"
-            android:onClick="onBinaryConvertButtonClick" />
+            android:layout_marginBottom="8dp">
 
-        <Button
-            android:id="@+id/decimal_button"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/binary_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/background"
+                android:onClick="onBinaryConvertButtonClick"
+                android:paddingHorizontal="@dimen/padding_horizontal"
+                android:paddingVertical="@dimen/padding_vertical"
+                android:text="@string/binary"
+                android:textColor="@color/text_color_button"
+                android:textSize="@dimen/size_text" />
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/background"
+                android:onClick="onBinaryConvertButtonClick"
+                android:paddingHorizontal="@dimen/padding_horizontal"
+                android:paddingVertical="@dimen/padding_vertical"
+                android:text="@string/octal"
+                android:textColor="@color/text_color_button"
+                android:textSize="@dimen/size_text" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Decimal"
-            android:onClick="onDecimalConvertButtonClick" />
 
-        <Button
-            android:id="@+id/hexadecimal_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hexadecimal"
-            android:onClick="onHexaConvertButtonClick" />
 
-        <Button
-            android:id="@+id/octal_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Octal"
-            android:onClick="onOctalConvertButtonClick" />
+            >
 
-        <Button
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Decimal_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/background"
+                android:onClick="onBinaryConvertButtonClick"
+                android:paddingHorizontal="@dimen/padding_horizontal"
+                android:paddingVertical="@dimen/padding_vertical"
+                android:text="Decimal"
+                android:textColor="@color/text_color_button"
+                android:textSize="@dimen/size_text" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/HexaDecimal_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/background"
+                android:onClick="onBinaryConvertButtonClick"
+                android:paddingHorizontal="@dimen/padding_horizontal"
+                android:paddingVertical="@dimen/padding_vertical"
+                android:text="@string/hexadecimal"
+                android:textColor="@color/text_color_button"
+                android:textSize="@dimen/size_text" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/clear_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Clear"
-            android:onClick="onClearButtonClick" />
+            android:layout_marginTop="8dp"
+            android:background="@drawable/background"
+            android:onClick="onBinaryConvertButtonClick"
+            android:paddingHorizontal="@dimen/padding_horizontal"
+            android:paddingVertical="@dimen/padding_vertical"
+            android:text="@string/clear"
+            android:textColor="@color/text_color_button"
+            android:textSize="16sp" />
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

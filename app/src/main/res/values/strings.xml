@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">calculator</string>
+    <string name="enter_number">Enter number</string>
+    <string name="result">Result</string>
+    <string name="hexadecimal">HexaDecimal</string>
+    <string name="clear">Clear</string>
+    <string name="binary">Binary</string>
+    <string name="octal">Octal</string>
 </resources>
