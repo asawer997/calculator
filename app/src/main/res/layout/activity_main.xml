@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/background_edit_text"
             android:hint="@string/enter_number"
-            android:inputType="number"
+            android:inputType="text"
             android:paddingVertical="@dimen/padding_vertical"
             android:textAlignment="center"
             android:textColor="@color/color_text_2"
